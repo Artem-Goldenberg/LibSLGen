@@ -5,7 +5,18 @@ types {
     Int(int32);
 }
 
-automaton A : Int {
+annotation Const();
+annotation Something();
+
+@Const
+var x: Int = 1;
+
+automaton A (
+    @Something
+    var y: Int,
+): Int {
+
+    @Something
     var i: Int;
 
     fun f(param: Int) {

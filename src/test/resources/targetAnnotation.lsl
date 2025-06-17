@@ -9,5 +9,5 @@ types {
 automaton B : Int {}
 
 automaton A : Int {
-    fun foo (@target self: B);
+    fun foo (@target self: Int);
 }

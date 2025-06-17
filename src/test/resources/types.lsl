@@ -9,14 +9,15 @@ enum foo.vldf.Type { // enum type
 typealias MyType = foo.vldf.Type;
 
 type StructureType {
-    field: Int;
+    var field: Int;
 }
 
 type BlackAndWhiteImage {
-    height: Int;
-    width: Int;
-    tpe: StructureType;
-    content: array<array<Boolean>>;
+    var height: Int;
+    var width: Int;
+    var tpe: StructureType;
+    var content: array<array<Boolean>>;
+    var mapContent: map<array<Boolean>, map<array<Boolean>, Boolean>>;
 }
 
 types {
@@ -28,10 +29,9 @@ types {
 }
 
 automaton Image : BlackAndWhiteImage {
-    fun inversePixel(img: BlackAndWhiteImage, x: Int, y: Int)
-    requires size: (x > 0) & (y > 0);
-    ensures img.content[y][x] != img.content[y][x]';
-    {
+    fun inversePixel(img: BlackAndWhiteImage, x: Int, y: Int) {
+        requires size: (x > 0) & (y > 0);
+        ensures img.content[y][x] != img.content[y][x]';
         img.content[y][x] = !img.content[y][x];
         img.tpe.field = 1;
     }
