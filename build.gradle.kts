@@ -5,39 +5,39 @@ plugins {
     id("com.vanniktech.maven.publish") version "0.30.0"
 }
 
-group = "io.github"
-version = "1.0-SNAPSHOT"
+group = "io.github.artem-goldenberg"
+version = "1.0.0"
 
 mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
     signAllPublications()
 
-    coordinates(group.toString(), "fibonacci", version.toString())
+    coordinates(group.toString(), "libsl-gen", version.toString())
 
     pom {
-        name = "Fibonacci library"
-        description = "A mathematics calculation library."
-        inceptionYear = "2024"
-        url = "https://github.com/kotlin-hands-on/fibonacci/"
+        name = "LibSLGen"
+        description = "Test generation library for the LibSL language specifications."
+        inceptionYear = "2025"
+        url = "https://github.com/Artem-Goldenberg/LibSLGen"
         licenses {
             license {
-                name = "The Apache License, Version 2.0"
-                url = "https://www.apache.org/licenses/LICENSE-2.0.txt"
-                distribution = "https://www.apache.org/licenses/LICENSE-2.0.txt"
+                name = "MIT License"
+                url = "https://spdx.org/licenses/MIT.html"
+                distribution = "https://spdx.org/licenses/MIT.html"
             }
         }
         developers {
             developer {
-                id = "kotlin-hands-on"
-                name = "Kotlin Developer Advocate"
-                url = "https://github.com/kotlin-hands-on/"
+                id = "artem"
+                name = "Artem Ibragimov"
+                url = "https://github.com/Artem-Goldenberg"
             }
         }
         scm {
-            url = "https://github.com/kotlin-hands-on/fibonacci/"
-            connection = "scm:git:git://github.com/kotlin-hands-on/fibonacci.git"
-            developerConnection = "scm:git:ssh://git@github.com/kotlin-hands-on/fibonacci.git"
+            url = "https://github.com/Artem-Goldenberg/LibSLGen"
+            connection = "scm:git:9git://github.com/Artem-Goldenberg/LibSLGen.git"
+            developerConnection = "scm:git:ssh://git@github.com/Artem-Goldenberg/LibSLGen.git"
         }
     }
 }
