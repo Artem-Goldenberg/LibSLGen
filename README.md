@@ -27,7 +27,8 @@ To add these generated tests to your java project, you need to provide functions
 `boolean is<state>() { ... }` where `<state>` refers to the name of the state in the finite automaton.
 
 Also, test generation might fail if you automaton functions use types, values of which are unknown.
-In this case, you can use the `@Values(<val1>, <val2>, ...)` annotation for each function parameter.
+In this case, you can use the `@Values(<val1>, <val2>, ...)` annotation for each function parameter,
+where `<valN>` must be a string literal, because it will be inserted directly into generated tests.
 You can provide however many desired values into them, they will be picked at random when the value
 for this parameter is needed.
 

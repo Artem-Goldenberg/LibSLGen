@@ -7,6 +7,10 @@ typealias Void = void;
 
 annotation Priority(value: int32);
 
+types {
+    Int(int32);
+}
+
 automaton Socket : int32 {
     initstate Alloced;
     state Bound, Listening, Connected;
@@ -22,7 +26,7 @@ automaton Socket : int32 {
     @Priority(80)
     fun bind(): void;
 
-    fun listen(param: int32): Void;
+    fun listen(@Values("1", "2", "3") param: Int): Void;
 
     fun conn();
     @Priority(70)

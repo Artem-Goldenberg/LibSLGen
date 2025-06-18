@@ -72,7 +72,10 @@ fun Random.callOf(func: Function, varName: String): String =
             require(anno.arguments.isNotEmpty()) {
                 "@Values annotation must have at least one argument in $arg"
             }
-            anno.arguments.map { it.value }.random(this).toString()
+            anno.arguments.map {
+                require(it.value is StringLiteral) { "Arguments to the @Values annotation must be string literals!" }
+                (it.value as StringLiteral).value
+            }.random(this).toString()
         } else {
             val type = arg.typeReference.resolve()
             require(type != null) { "Cannot resolve type for argument: $arg" }
