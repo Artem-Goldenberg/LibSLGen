@@ -24,6 +24,8 @@ sealed class ConsList<out T>: Iterable<T> {
         }
     }
 
+    fun isEmpty(): Boolean = this is Nil
+
     fun getLast(): T? {
         return when (this) {
             is Cons -> {

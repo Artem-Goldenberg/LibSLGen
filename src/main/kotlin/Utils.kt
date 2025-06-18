@@ -4,23 +4,6 @@ import org.jetbrains.research.libsl.nodes.Shift
 import org.jetbrains.research.libsl.nodes.State
 import org.jetbrains.research.libsl.type.*
 
-fun getValueFor(t: Type) {
-    val some = when (t) {
-        is ArrayType -> TODO("some")
-        is EnumType -> TODO()
-        is GenericType -> TODO()
-        is EnumLikeSemanticType -> TODO()
-        is SimpleType -> TODO()
-        is TypeAlias -> TODO()
-        is ListType -> TODO()
-        is MapType -> TODO()
-        is NullType -> TODO()
-        is PrimitiveType -> TODO()
-        is RealType -> TODO()
-        is StructuredType -> TODO()
-    }
-}
-
 fun quickString(shift: Shift): String {
     return "${shift.from.name} -> ${shift.to.name}"
 }

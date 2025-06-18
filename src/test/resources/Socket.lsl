@@ -5,14 +5,14 @@ include socket.h;
 
 typealias Void = void;
 
-annotation Priority(value: int);
+annotation Priority(value: int32);
 
-automaton Socket : int {
+automaton Socket : int32 {
     initstate Alloced;
     state Bound, Listening, Connected;
 
     shift Alloced -> Bound by  bind;
-    shift Bound -> Listening by listen(int);
+    shift Bound -> Listening by listen(int32);
     shift Listening -> Connected by conn;
     shift Connected -> Connected by [snd, rcv];
 
@@ -22,7 +22,7 @@ automaton Socket : int {
     @Priority(80)
     fun bind(): void;
 
-    fun listen(param: int): Void;
+    fun listen(param: int32): Void;
 
     fun conn();
     @Priority(70)
